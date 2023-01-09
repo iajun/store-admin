@@ -36,4 +36,14 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["typeorm", "medusa-interfaces"],
   },
+  server: {
+    port: +env.PORT || 8090,
+    proxy: {
+      '/admin': {
+        target: env.PROXY_BACKEND_URL,
+        changeOrigin: true
+      }
+    }
+  }
 })
+

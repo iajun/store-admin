@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import Button from "../../fundamentals/button"
 import SigninInput from "../../molecules/input-signin"
+import GoogleLogin from "../google-login"
 
 type FormValues = {
   email: string
@@ -68,6 +69,7 @@ const LoginCard: React.FC<LoginCardProps> = ({ toResetPassword }) => {
         >
           Continue
         </Button>
+        <GoogleLogin />
         <span
           className="inter-small-regular text-grey-50 mt-8 cursor-pointer"
           onClick={toResetPassword}
